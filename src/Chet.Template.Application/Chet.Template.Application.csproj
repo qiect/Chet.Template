@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Chet.Template</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Chet.Template.Application.Caching\Chet.Template.Application.Caching.csproj" />
+    <ProjectReference Include="..\Chet.Template.Application.Contracts\Chet.Template.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

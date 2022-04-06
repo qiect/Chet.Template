@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+  
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
+    <PackageReference Include="Volo.Abp.Caching" Version="5.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chet.Template.Application.Contracts\Chet.Template.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Chet.Template.Domain.Shared\Chet.Template.Domain.Shared.csproj" />
+    <ProjectReference Include="..\Chet.Template.ToolKits\Chet.Template.ToolKits.csproj" />
+  </ItemGroup>
+</Project>
