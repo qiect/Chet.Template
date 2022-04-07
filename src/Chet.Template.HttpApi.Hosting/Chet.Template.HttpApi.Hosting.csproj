@@ -11,7 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Chet.Template.Swagger\Chet.Template.Swagger.csproj" />
     <ProjectReference Include="..\Chet.Template.HttpApi\Chet.Template.HttpApi.csproj" />
-    <!--<ProjectReference Include="..\Chet.Template.EntityFrameworkCore\Chet.Template.EntityFrameworkCore.csproj" />-->
+    <ProjectReference Include="..\Chet.Template.EntityFrameworkCore\Chet.Template.EntityFrameworkCore.csproj" />
     <PackageReference Include="Volo.Abp.Autofac" Version="5.2.0" />
   </ItemGroup>
 
@@ -26,6 +26,11 @@
     <None Update="Chet.Template.HttpApi.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>

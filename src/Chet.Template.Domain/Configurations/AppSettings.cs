@@ -24,8 +24,7 @@ namespace Chet.Template.Configurations
         static AppSettings()
         {
             // 加载appsettings.json，并构建IConfigurationRoot
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-                                                    .AddJsonFile("appsettings.json", true, true);
+            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", true, true);
             _config = builder.Build();
         }
 

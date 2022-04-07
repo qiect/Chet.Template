@@ -1,3 +1,4 @@
+using Chet.Template.EntityFrameworkCore;
 using Chet.Template.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,7 +14,8 @@ namespace Chet.Template.Web;
        typeof(AbpAspNetCoreMvcModule),
        typeof(AbpAutofacModule),
        typeof(TemplateHttpApiModule),
-       typeof(TemplateSwaggerModule)
+       typeof(TemplateSwaggerModule),
+       typeof(TemplateEntityFrameworkCoreModule)
     )]
 public class TemplateHttpApiHostingModule : AbpModule
 {

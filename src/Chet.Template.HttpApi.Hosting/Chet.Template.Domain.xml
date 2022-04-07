@@ -29,6 +29,13 @@
             ConnectionStrings
             </summary>
         </member>
+        <member name="M:Chet.Template.Repositories.ITestRepository.BatchInsertAsync(System.Collections.Generic.IEnumerable{Chet.Template.Test})">
+            <summary>
+            批量插入
+            </summary>
+            <param name="tests"></param>
+            <returns></returns>
+        </member>
         <member name="P:Chet.Template.Test.Name">
             <summary>
             名称

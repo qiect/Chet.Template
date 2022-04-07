@@ -16,7 +16,7 @@ namespace Chet.Template.EntityFrameworkCore.DbMigrations
             var configuration = BuildConfiguration();
 
             var builder = new DbContextOptionsBuilder<TemplateDbMigrationsDbContext>()
-                .UseMySql(configuration.GetConnectionString("Mysql"), ServerVersion.Parse("8.0.27"));
+                .UseMySql(configuration.GetConnectionString("MySql"), ServerVersion.Parse("8.0.27"));
 
             return new TemplateDbMigrationsDbContext(builder.Options);
         }

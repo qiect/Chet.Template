@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chet.Template
 {
-    public class HelloWorldService : TemplateAppServiceBase, IHelloWorldService
+    public class HelloWorldService : ServiceBase, IHelloWorldService
     {
         public string HelloWorld()
         {

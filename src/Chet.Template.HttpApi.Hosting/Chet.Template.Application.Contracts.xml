@@ -4,5 +4,15 @@
         <name>Chet.Template.Application.Contracts</name>
     </assembly>
     <members>
+        <member name="P:Chet.Template.TestDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Chet.Template.TestDto.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
     </members>
 </doc>

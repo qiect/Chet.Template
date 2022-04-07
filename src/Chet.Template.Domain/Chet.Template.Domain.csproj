@@ -6,7 +6,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>Chet.Template</RootNamespace>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>E:\gitee\Template\src\Chet.Template.HttpApi.Hosting\Chet.Template.Domain.xml</DocumentationFile>
+    <DocumentationFile>..\Chet.Template.HttpApi.Hosting\Chet.Template.Domain.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

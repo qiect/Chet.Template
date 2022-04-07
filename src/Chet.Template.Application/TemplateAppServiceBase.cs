@@ -4,6 +4,6 @@ namespace Chet.Template;
 
 /* Inherit your application services from this class.
  */
-public abstract class TemplateAppServiceBase : ApplicationService
+public abstract class ServiceBase : ApplicationService
 {
 }

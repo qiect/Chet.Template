@@ -4,5 +4,34 @@
         <name>Chet.Template.HttpApi</name>
     </assembly>
     <members>
+        <member name="M:Chet.Template.Controllers.TestController.InsertTestAsync(Chet.Template.TestDto)">
+            <summary>
+            添加Test
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Chet.Template.Controllers.TestController.DeleteTestAsync(System.Guid)">
+            <summary>
+            删除Test
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Chet.Template.Controllers.TestController.UpdateTestAsync(System.Guid,Chet.Template.TestDto)">
+            <summary>
+            更新Test
+            </summary>
+            <param name="id"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Chet.Template.Controllers.TestController.GetTestAsync(System.Guid)">
+            <summary>
+            查询Test
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

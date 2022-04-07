@@ -5,7 +5,8 @@ using Volo.Abp.Modularity;
 namespace Chet.Template;
 
 [DependsOn(
-    typeof(AbpIdentityApplicationModule)
+    typeof(AbpIdentityApplicationModule),
+    typeof(AbpAutoMapperModule)
     )]
 public class TemplateApplicationModule : AbpModule
 {

@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Chet.Template.Application.Contracts\Chet.Template.Application.Contracts.csproj" />
     <ProjectReference Include="..\Chet.Template.Domain.Shared\Chet.Template.Domain.Shared.csproj" />
+    <ProjectReference Include="..\Chet.Template.Domain\Chet.Template.Domain.csproj" />
     <ProjectReference Include="..\Chet.Template.ToolKits\Chet.Template.ToolKits.csproj" />
   </ItemGroup>
 </Project>

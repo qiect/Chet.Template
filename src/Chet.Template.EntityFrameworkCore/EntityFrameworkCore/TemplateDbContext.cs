@@ -9,7 +9,7 @@ using Volo.Abp.EntityFrameworkCore;
 
 namespace Chet.Template.EntityFrameworkCore
 {
-    [ConnectionStringName("Mysql")]
+    [ConnectionStringName("MySql")]
     public class TemplateDbContext : AbpDbContext<TemplateDbContext>
     {
         public DbSet<Test> Tests { get; set; }

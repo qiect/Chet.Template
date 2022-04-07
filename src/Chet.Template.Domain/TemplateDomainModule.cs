@@ -11,5 +11,6 @@ public class TemplateDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
+
     }
 }
