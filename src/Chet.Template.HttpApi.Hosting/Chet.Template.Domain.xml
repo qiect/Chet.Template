@@ -4,5 +4,40 @@
         <name>Chet.Template.Domain</name>
     </assembly>
     <members>
+        <member name="T:Chet.Template.Configurations.AppSettings">
+            <summary>
+            appsettings.json配置文件数据读取类
+            </summary>
+        </member>
+        <member name="F:Chet.Template.Configurations.AppSettings._config">
+            <summary>
+            配置文件的根节点
+            </summary>
+        </member>
+        <member name="M:Chet.Template.Configurations.AppSettings.#cctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Chet.Template.Configurations.AppSettings.EnableDb">
+            <summary>
+            EnableDb
+            </summary>
+        </member>
+        <member name="P:Chet.Template.Configurations.AppSettings.ConnectionStrings">
+            <summary>
+            ConnectionStrings
+            </summary>
+        </member>
+        <member name="P:Chet.Template.Test.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Chet.Template.Test.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
     </members>
 </doc>
