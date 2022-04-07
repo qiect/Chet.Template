@@ -1,6 +1,5 @@
 ﻿using Chet.Template.Repositories;
-using System;
-using System.Threading.Tasks;
+using Chet.Template.ToolKits.Base;
 
 namespace Chet.Template
 {
@@ -13,40 +12,68 @@ namespace Chet.Template
             this._testRepository = testRepository;
         }
 
-        public async Task<bool> DeleteTestAsync(Guid id)
+        public async Task<ServiceResult> DeleteTestAsync(Guid id)
         {
+            var result = new ServiceResult();
             await _testRepository.DeleteAsync(id);
-            return true;
+            return result;
         }
 
-        public async Task<TestDto> GetTestAsync(Guid id)
+        public async Task<ServiceResult<TestDto>> GetTestAsync(Guid id)
         {
+            var result = new ServiceResult<TestDto>();
             var entity = await _testRepository.GetAsync(id);
-            return new TestDto()
+            if (entity == null)
             {
-                Name = entity.Name,
-                Remark = entity.Remark
-            };
+                result.IsFailed("Test不存在！");
+            }
+            else
+            {
+                result.IsSuccess(new TestDto()
+                {
+                    Name = entity.Name,
+                    Remark = entity.Remark
+                });
+            }
+            return result;
         }
 
-        public async Task<bool> InsertTestAsync(TestDto dto)
+        public async Task<ServiceResult<string>> InsertTestAsync(TestDto dto)
         {
+            var result = new ServiceResult<string>();
             var entity = new Test()
             {
                 Name = dto.Name,
                 Remark = dto.Remark
             };
             var test = await _testRepository.InsertAsync(entity);
-            return test != null;
+            if (test != null)
+            {
+                result.IsSuccess("添加成功！");
+            }
+            else
+            {
+                result.IsFailed("添加失败！");
+            }
+            return result;
         }
 
-        public async Task<bool> UpdateTestAsync(Guid id, TestDto dto)
+        public async Task<ServiceResult<string>> UpdateTestAsync(Guid id, TestDto dto)
         {
+            var result = new ServiceResult<string>();
             var entity = await _testRepository.GetAsync(id);
-            entity.Name = dto.Name;
-            entity.Remark = dto.Remark;
-            await _testRepository.UpdateAsync(entity);
-            return true;
+            if (entity == null)
+            {
+                result.IsFailed("Test不存在！");
+            }
+            else
+            {
+                entity.Name = dto.Name;
+                entity.Remark = dto.Remark;
+                await _testRepository.UpdateAsync(entity);
+                result.IsSuccess("更新成功！");
+            }
+            return result;
         }
     }
 }

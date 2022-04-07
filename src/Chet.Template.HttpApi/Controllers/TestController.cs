@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Chet.Template.ToolKits.Base;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace Chet.Template.Controllers
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<bool> InsertTestAsync([FromBody] TestDto dto)
+        public async Task<ServiceResult<string>> InsertTestAsync([FromBody] TestDto dto)
         {
             return await _testService.InsertTestAsync(dto);
         }
@@ -33,7 +34,7 @@ namespace Chet.Template.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
-        public async Task<bool> DeleteTestAsync([Required] Guid id)
+        public async Task<ServiceResult> DeleteTestAsync([Required] Guid id)
         {
             return await _testService.DeleteTestAsync(id);
         }
@@ -45,7 +46,7 @@ namespace Chet.Template.Controllers
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPut]
-        public async Task<bool> UpdateTestAsync([Required] Guid id, [FromBody] TestDto dto)
+        public async Task<ServiceResult<string>> UpdateTestAsync([Required] Guid id, [FromBody] TestDto dto)
         {
             return await _testService.UpdateTestAsync(id, dto);
         }
@@ -56,7 +57,7 @@ namespace Chet.Template.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<TestDto> GetTestAsync([Required] Guid id)
+        public async Task<ServiceResult<TestDto>> GetTestAsync([Required] Guid id)
         {
             return await _testService.GetTestAsync(id);
         }
