@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Chet.Template.Domain\Chet.Template.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.14" />
+  </ItemGroup>
+
 </Project>

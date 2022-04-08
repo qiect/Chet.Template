@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using Volo.Abp.AspNetCore.Mvc;
 
 namespace Chet.Template.Controllers
@@ -19,6 +20,18 @@ namespace Chet.Template.Controllers
         public string HelloWorld()
         {
             return _helloWorldService.HelloWorld();
+        }
+
+        /// <summary>
+        /// 这是一个异常
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        [HttpGet]
+        [Route("Exception")]
+        public string Exception()
+        {
+            throw new NotImplementedException("这是一个未实现的异常接口");
         }
     }
 }

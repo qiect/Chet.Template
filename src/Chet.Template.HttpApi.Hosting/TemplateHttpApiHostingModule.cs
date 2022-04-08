@@ -1,15 +1,20 @@
 using Chet.Template.Configurations;
 using Chet.Template.EntityFrameworkCore;
+using Chet.Template.Filters;
+using Chet.Template.Middleware;
 using Chet.Template.Swagger;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Linq;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
+using Volo.Abp.AspNetCore.Mvc.ExceptionHandling;
 using Volo.Abp.Autofac;
 using Volo.Abp.Modularity;
 
@@ -48,6 +53,15 @@ public class TemplateHttpApiHostingModule : AbpModule
 
         // Http请求
         context.Services.AddHttpClient();
+
+        Configure<MvcOptions>(options =>
+        {
+            var filterMetadata = options.Filters.FirstOrDefault(x => x is ServiceFilterAttribute attribute && attribute.ServiceType.Equals(typeof(AbpExceptionFilter)));
+
+            // 移除 AbpExceptionFilter
+            options.Filters.Remove(filterMetadata);
+            options.Filters.Add(typeof(TemplateExceptionFilter));
+        });
     }
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)
@@ -65,6 +79,9 @@ public class TemplateHttpApiHostingModule : AbpModule
 
         // 路由
         app.UseRouting();
+
+        // 异常处理中间件
+        app.UseMiddleware<ExceptionHandlerMiddleware>();
 
         // 身份验证
         app.UseAuthentication();
