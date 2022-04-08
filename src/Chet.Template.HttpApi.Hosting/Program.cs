@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Chet.Template.ToolKits.Log4Net;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -12,7 +13,7 @@ public class Program
     {
 
         var builder = WebApplication.CreateBuilder(args);
-        builder.Host.UseAutofac();
+        builder.Host.UseLog4Net().UseAutofac();
         await builder.AddApplicationAsync<TemplateHttpApiHostingModule>();
         var app = builder.Build();
         await app.InitializeApplicationAsync();

@@ -46,7 +46,6 @@ namespace Chet.Template.Swagger.Filters
 
             // 筛选一下tags
             swaggerDoc.Tags = tags.Where(x => !controllers.Contains(x.Name)).OrderBy(x => x.Name).ToList();
-
             #endregion
         }
     }

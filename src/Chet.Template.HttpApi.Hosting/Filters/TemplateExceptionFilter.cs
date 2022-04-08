@@ -1,10 +1,17 @@
-﻿using Chet.Template.ToolKits.log4net;
+﻿using log4net;
 using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Chet.Template.Filters
 {
     public class TemplateExceptionFilter: IExceptionFilter
     {
+        private readonly ILog _log;
+
+        public TemplateExceptionFilter()
+        {
+            _log = LogManager.GetLogger(typeof(TemplateExceptionFilter));
+        }
+
         /// <summary>
         /// 异常处理
         /// </summary>
@@ -12,8 +19,8 @@ namespace Chet.Template.Filters
         /// <returns></returns>
         public void OnException(ExceptionContext context)
         {
-            // 日志记录
-            LoggerHelper.WriteToFile($"{context.HttpContext.Request.Path}|{context.Exception.Message}", context.Exception);
+            // 错误日志记录
+            _log.Error($"{context.HttpContext.Request.Path}|{context.Exception.Message}", context.Exception);
         }
     }
 }

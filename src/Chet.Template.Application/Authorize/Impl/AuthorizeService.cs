@@ -93,10 +93,12 @@ namespace Chet.Template.Authorize.Impl
                 return result;
             }
 
-            var url = $"{GitHubConfig.API_User}?access_token={access_token}";
             using var client = _httpClient.CreateClient();
-            client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.14 Safari/537.36 Edg/83.0.478.13");
-            var httpResponse = await client.GetAsync(url);
+            //携带token请求认证
+            var authenticationHeaderValue = new AuthenticationHeaderValue("token", access_token);
+            client.DefaultRequestHeaders.Authorization = authenticationHeaderValue;
+            client.DefaultRequestHeaders.Add("UserAgent", "chet");
+            var httpResponse = await client.GetAsync(GitHubConfig.API_User);
             if (httpResponse.StatusCode != HttpStatusCode.OK)
             {
                 result.IsFailed("access_token不正确");

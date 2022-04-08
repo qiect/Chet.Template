@@ -88,7 +88,7 @@ namespace Chet.Template.Swagger
                     options.SwaggerDoc(x.UrlPrefix, x.OpenApiInfo);
                 });
                 // 应用Controller的API文档描述信息
-                options.DocumentFilter<SwaggerDocumentFilter>();
+                //options.DocumentFilter<SwaggerDocumentFilter>();
 
                 #region 小绿锁，JWT身份认证配置
                 var security = new OpenApiSecurityScheme
