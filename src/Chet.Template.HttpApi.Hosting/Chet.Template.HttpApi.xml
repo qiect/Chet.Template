@@ -4,6 +4,26 @@
         <name>Chet.Template.HttpApi</name>
     </assembly>
     <members>
+        <member name="M:Chet.Template.Controllers.AuthController.GetLoginAddressAsync">
+            <summary>
+            获取登录地址(GitHub)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Chet.Template.Controllers.AuthController.GetAccessTokenAsync(System.String)">
+            <summary>
+            获取AccessToken
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Chet.Template.Controllers.AuthController.GenerateTokenAsync(System.String)">
+            <summary>
+            登录成功，生成Token
+            </summary>
+            <param name="access_token"></param>
+            <returns></returns>
+        </member>
         <member name="M:Chet.Template.Controllers.TestController.InsertTestAsync(Chet.Template.TestDto)">
             <summary>
             添加Test

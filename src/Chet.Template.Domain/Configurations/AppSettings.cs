@@ -19,6 +19,11 @@ namespace Chet.Template.Configurations
         private static readonly IConfigurationRoot _config;
 
         /// <summary>
+        /// ApiVersion
+        /// </summary>
+        public static string ApiVersion => _config["ApiVersion"];
+
+        /// <summary>
         /// Constructor
         /// </summary>
         static AppSettings()
@@ -37,5 +42,40 @@ namespace Chet.Template.Configurations
         /// ConnectionStrings
         /// </summary>
         public static string ConnectionStrings => _config.GetConnectionString(EnableDb);
+
+        #region GitHub
+        /// <summary>
+        /// GitHub
+        /// </summary>
+        public static class GitHub
+        {
+            public static int UserId => Convert.ToInt32(_config["Github:UserId"]);
+
+            public static string Client_ID => _config["Github:ClientID"];
+
+            public static string Client_Secret => _config["Github:ClientSecret"];
+
+            public static string Redirect_Uri => _config["Github:RedirectUri"];
+
+            public static string ApplicationName => _config["Github:ApplicationName"];
+        }
+        #endregion
+
+        #region JWT
+        public static class JWT
+        {
+            public static string Domain => _config["JWT:Domain"];
+            /// <summary>
+            /// 随便用编码工具进行生成
+            /// </summary>
+            public static string SecurityKey => _config["JWT:SecurityKey"];
+            /// <summary>
+            /// token过期时间
+            /// </summary>
+            public static int Expires => Convert.ToInt32(_config["JWT:Expires"]);
+        } 
+        #endregion
     }
+
+
 }
