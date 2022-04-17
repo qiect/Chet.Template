@@ -73,6 +73,20 @@ namespace Chet.Template.Configurations
             /// token过期时间
             /// </summary>
             public static int Expires => Convert.ToInt32(_config["JWT:Expires"]);
+        }
+        #endregion
+
+
+        #region Redis
+        /// <summary>
+        /// Caching
+        /// </summary>
+        public static class Caching
+        {
+            /// <summary>
+            /// RedisConnectionString
+            /// </summary>
+            public static string RedisConnectionString => _config["Caching:RedisConnectionString"];
         } 
         #endregion
     }
