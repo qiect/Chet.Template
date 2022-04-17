@@ -29,11 +29,8 @@ namespace Chet.Template
             }
             else
             {
-                result.IsSuccess(new TestDto()
-                {
-                    Name = entity.Name,
-                    Remark = entity.Remark
-                });
+                var dto = ObjectMapper.Map<Test, TestDto>(entity);
+                result.IsSuccess(dto);
             }
             return result;
         }
@@ -41,11 +38,7 @@ namespace Chet.Template
         public async Task<ServiceResult<string>> InsertTestAsync(TestDto dto)
         {
             var result = new ServiceResult<string>();
-            var entity = new Test()
-            {
-                Name = dto.Name,
-                Remark = dto.Remark
-            };
+            var entity = ObjectMapper.Map<TestDto,Test>(dto); 
             var test = await _testRepository.InsertAsync(entity);
             if (test != null)
             {

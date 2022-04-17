@@ -56,6 +56,7 @@ public class TemplateHttpApiHostingModule : AbpModule
         // Http请求
         context.Services.AddHttpClient();
 
+        //异常处理
         Configure<MvcOptions>(options =>
         {
             var filterMetadata = options.Filters.FirstOrDefault(x => x is ServiceFilterAttribute attribute && attribute.ServiceType.Equals(typeof(AbpExceptionFilter)));
@@ -63,6 +64,15 @@ public class TemplateHttpApiHostingModule : AbpModule
             // 移除 AbpExceptionFilter
             options.Filters.Remove(filterMetadata);
             options.Filters.Add(typeof(TemplateExceptionFilter));
+        });
+
+        //路由规则配置
+        context.Services.AddRouting(options =>
+        {
+            // 设置URL为小写
+            options.LowercaseUrls = true;
+            // 在生成的URL后面添加斜杠
+            options.AppendTrailingSlash = true;
         });
     }
 
@@ -90,6 +100,10 @@ public class TemplateHttpApiHostingModule : AbpModule
 
         // 认证授权
         app.UseAuthorization();
+
+        //app.UseHsts();//使用HSTS的中间件，该中间件添加了严格传输安全头
+        //app.UseCors();//使用默认的跨域配置
+        //app.UseHttpsRedirection();//HTTP请求转HTTPS
 
         // 路由映射
         app.UseEndpoints(endpoints =>

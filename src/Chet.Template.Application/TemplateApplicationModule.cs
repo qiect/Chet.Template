@@ -16,7 +16,8 @@ public class TemplateApplicationModule : AbpModule
     {
         Configure<AbpAutoMapperOptions>(options =>
         {
-            options.AddMaps<TemplateApplicationModule>();
+            options.AddMaps<TemplateApplicationModule>(validate: true);
+            options.AddProfile<TemplateAutoMapperProfile>(validate: true);
         });
     }
 }
