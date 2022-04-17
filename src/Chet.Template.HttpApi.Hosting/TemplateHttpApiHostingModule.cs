@@ -1,3 +1,4 @@
+using Chet.Template.BackgroundJobs;
 using Chet.Template.Configurations;
 using Chet.Template.EntityFrameworkCore;
 using Chet.Template.Filters;
@@ -25,7 +26,8 @@ namespace Chet.Template.Web;
        typeof(AbpAutofacModule),
        typeof(TemplateHttpApiModule),
        typeof(TemplateSwaggerModule),
-       typeof(TemplateEntityFrameworkCoreModule)
+       typeof(TemplateEntityFrameworkCoreModule),
+       typeof(TemplateBackgroundJobsModule)
     )]
 public class TemplateHttpApiHostingModule : AbpModule
 {

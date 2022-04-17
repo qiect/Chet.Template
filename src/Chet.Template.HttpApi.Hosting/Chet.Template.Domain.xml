@@ -59,6 +59,11 @@
             RedisConnectionString
             </summary>
         </member>
+        <member name="T:Chet.Template.Configurations.AppSettings.Hangfire">
+            <summary>
+            Hangfire
+            </summary>
+        </member>
         <member name="F:Chet.Template.Configurations.GitHubConfig.API_Authorize">
             <summary>
             GET请求，跳转GitHub登录界面，获取用户授权，得到code
