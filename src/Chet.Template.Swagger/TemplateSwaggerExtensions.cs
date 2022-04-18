@@ -58,17 +58,6 @@ namespace Chet.Template.Swagger
                     Title = "Chet.Template - 通用公共接口",
                     Description = description
                 }
-            },
-            new SwaggerApiInfo
-            {
-                UrlPrefix = Grouping.GroupName_JWT,
-                Name = "JWT授权接口",
-                OpenApiInfo = new OpenApiInfo
-                {
-                    Version = version,
-                    Title = "Chet.Template - JWT授权接口",
-                    Description = description
-                }
             }
         };
 

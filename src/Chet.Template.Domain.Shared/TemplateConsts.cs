@@ -36,11 +36,6 @@ namespace Chet.Template
         /// 其他通用接口组
         /// </summary>
         public const string GroupName_Other = "v3";
-
-        /// <summary>
-        /// JWT授权接口组
-        /// </summary>
-        public const string GroupName_JWT = "v4";
     }
 
     /// <summary>

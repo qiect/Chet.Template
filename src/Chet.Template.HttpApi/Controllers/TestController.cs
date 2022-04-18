@@ -11,7 +11,6 @@ namespace Chet.Template.Controllers
     [ApiController]
     [Route("[controller]")]
     [ApiExplorerSettings(GroupName = Grouping.GroupName_Admin)]
-    [Authorize]
     public class TestController : AbpController
     {
         private readonly ITestService _testService;
