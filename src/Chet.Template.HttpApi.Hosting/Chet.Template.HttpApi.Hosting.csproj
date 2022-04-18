@@ -13,7 +13,6 @@
     <ProjectReference Include="..\Chet.Template.Swagger\Chet.Template.Swagger.csproj" />
     <ProjectReference Include="..\Chet.Template.HttpApi\Chet.Template.HttpApi.csproj" />
     <ProjectReference Include="..\Chet.Template.EntityFrameworkCore\Chet.Template.EntityFrameworkCore.csproj" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.3" />
     <PackageReference Include="Volo.Abp.Autofac" Version="5.2.0" />
   </ItemGroup>
 

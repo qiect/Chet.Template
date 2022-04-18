@@ -1,17 +1,13 @@
 using Chet.Template.BackgroundJobs;
-using Chet.Template.Configurations;
 using Chet.Template.EntityFrameworkCore;
 using Chet.Template.Filters;
 using Chet.Template.Middleware;
 using Chet.Template.Swagger;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
-using System;
 using System.Linq;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
