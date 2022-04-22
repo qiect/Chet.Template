@@ -9,11 +9,13 @@
   <ItemGroup>
     <PackageReference Include="Hangfire.Dashboard.BasicAuthorization" Version="1.0.2" />
     <PackageReference Include="Hangfire.MySqlStorage" Version="2.0.3" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.42" />
     <PackageReference Include="Volo.Abp.AspNetCore" Version="5.2.0" />
     <PackageReference Include="Volo.Abp.BackgroundJobs.HangFire" Version="5.2.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Chet.Template.Application.Contracts\Chet.Template.Application.Contracts.csproj" />
     <ProjectReference Include="..\Chet.Template.Domain\Chet.Template.Domain.csproj" />
   </ItemGroup>
 
