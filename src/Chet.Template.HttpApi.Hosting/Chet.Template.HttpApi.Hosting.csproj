@@ -9,7 +9,6 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\Chet.Template.BackgroundJobs\Chet.Template.BackgroundJobs.csproj" />
     <ProjectReference Include="..\Chet.Template.Swagger\Chet.Template.Swagger.csproj" />
     <ProjectReference Include="..\Chet.Template.HttpApi\Chet.Template.HttpApi.csproj" />
     <ProjectReference Include="..\Chet.Template.EntityFrameworkCore\Chet.Template.EntityFrameworkCore.csproj" />

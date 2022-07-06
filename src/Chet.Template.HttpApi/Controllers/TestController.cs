@@ -8,9 +8,12 @@ using Volo.Abp.AspNetCore.Mvc;
 
 namespace Chet.Template.Controllers
 {
+    /// <summary>
+    /// Test控制器
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
-    [ApiExplorerSettings(GroupName = Grouping.GroupName_Admin)]
+    [ApiExplorerSettings(GroupName = Grouping.GroupName_Front)]//分配到前台接口组
     public class TestController : AbpController
     {
         private readonly ITestService _testService;

@@ -23,12 +23,12 @@ namespace Chet.Template
     public static class Grouping
     {
         /// <summary>
-        /// Test前台接口组
+        /// 前台接口组
         /// </summary>
         public const string GroupName_Front = "v1";
 
         /// <summary>
-        /// Test后台接口组
+        /// 后台接口组
         /// </summary>
         public const string GroupName_Admin = "v2";
 

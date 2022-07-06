@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Chet.Template.BackgroundJobs
 {
-    public static class MeowvBlogBackgroundJobsExtensions
+    public static class TemplateBackgroundJobsExtensions
     {
         public static void UseHangfireTest(this IServiceProvider service)
         {

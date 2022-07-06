@@ -1,9 +1,7 @@
 ﻿using Chet.Template.Configurations;
-using Chet.Template.Swagger.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.Filters;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace Chet.Template.Swagger
@@ -29,29 +27,29 @@ namespace Chet.Template.Swagger
             new SwaggerApiInfo
             {
                 UrlPrefix = Grouping.GroupName_Front,
-                Name = "Test前台接口",
+                Name = "Chet.Template - 前台接口",
                 OpenApiInfo = new OpenApiInfo
                 {
                     Version = version,
-                    Title = "Chet.Template - Test前台接口",
+                    Title = "Chet.Template - 前台接口",
                     Description = description
                 }
             },
             new SwaggerApiInfo
             {
                 UrlPrefix = Grouping.GroupName_Admin,
-                Name = "Test后台接口",
+                Name = "Chet.Template - 后台接口",
                 OpenApiInfo = new OpenApiInfo
                 {
                     Version = version,
-                    Title = "Chet.Template - Test后台接口",
+                    Title = "Chet.Template - 后台接口",
                     Description = description
                 }
             },
             new SwaggerApiInfo
             {
                 UrlPrefix = Grouping.GroupName_Other,
-                Name = "通用公共接口",
+                Name = "Chet.Template - 通用公共接口",
                 OpenApiInfo = new OpenApiInfo
                 {
                     Version = version,
@@ -65,35 +63,14 @@ namespace Chet.Template.Swagger
         {
             return services.AddSwaggerGen(options =>
             {
-                //options.SwaggerDoc("v1", new OpenApiInfo
-                //{
-                //    Version = "1.0.0",
-                //    Title = "Chet.Template",
-                //    Description = "接口描述"
-                //});
                 // 遍历并应用Swagger分组信息
                 ApiInfos.ForEach(x =>
                 {
                     options.SwaggerDoc(x.UrlPrefix, x.OpenApiInfo);
                 });
+
                 // 应用Controller的API文档描述信息
                 //options.DocumentFilter<SwaggerDocumentFilter>();
-
-                #region 小绿锁，JWT身份认证配置
-                var security = new OpenApiSecurityScheme
-                {
-                    Description = "JWT模式授权，请输入 Bearer {Token} 进行身份验证",
-                    Name = "Authorization",
-                    In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey
-                };
-                
-                options.AddSecurityDefinition("oauth2", security);
-                options.AddSecurityRequirement(new OpenApiSecurityRequirement { { security, new List<string>() } });
-                options.OperationFilter<AddResponseHeadersFilter>();
-                options.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
-                options.OperationFilter<SecurityRequirementsOperationFilter>(); 
-                #endregion
 
                 options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Chet.Template.HttpApi.xml"));
                 options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Chet.Template.Domain.xml"));
@@ -105,7 +82,6 @@ namespace Chet.Template.Swagger
         {
             app.UseSwaggerUI(options =>
             {
-                //options.SwaggerEndpoint($"/swagger/v1/swagger.json", "默认接口");
                 // 遍历分组信息，生成Json
                 ApiInfos.ForEach(x =>
                 {

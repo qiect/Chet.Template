@@ -7,6 +7,9 @@ using Volo.Abp.Domain.Repositories;
 
 namespace Chet.Template.Repositories
 {
+    /// <summary>
+    /// Test仓储
+    /// </summary>
     public interface ITestRepository : IRepository<Test, Guid>
     {
         /// <summary>

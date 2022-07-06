@@ -27,8 +27,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chet.Template.Swagger", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chet.Template.ToolKits", "src\Chet.Template.ToolKits\Chet.Template.ToolKits.csproj", "{5188F936-04CE-46B6-A0A9-2B38A79D28F6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chet.Template.BackgroundJobs", "src\Chet.Template.BackgroundJobs\Chet.Template.BackgroundJobs.csproj", "{2D4B1741-E783-4E2F-AEA5-408356C586D2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,10 +77,6 @@ Global
 		{5188F936-04CE-46B6-A0A9-2B38A79D28F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5188F936-04CE-46B6-A0A9-2B38A79D28F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5188F936-04CE-46B6-A0A9-2B38A79D28F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D4B1741-E783-4E2F-AEA5-408356C586D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D4B1741-E783-4E2F-AEA5-408356C586D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D4B1741-E783-4E2F-AEA5-408356C586D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D4B1741-E783-4E2F-AEA5-408356C586D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,7 +93,6 @@ Global
 		{068855E8-9240-4F1A-910B-CF825794513B} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{00727D09-E453-47B8-B497-2F87E8E07E73} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{5188F936-04CE-46B6-A0A9-2B38A79D28F6} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
-		{2D4B1741-E783-4E2F-AEA5-408356C586D2} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28315BFD-90E7-4E14-A2EA-F3D23AF4126F}

@@ -44,9 +44,9 @@
             RedisConnectionString
             </summary>
         </member>
-        <member name="T:Chet.Template.Configurations.AppSettings.Hangfire">
+        <member name="T:Chet.Template.Repositories.ITestRepository">
             <summary>
-            Hangfire
+            Test仓储
             </summary>
         </member>
         <member name="M:Chet.Template.Repositories.ITestRepository.BatchInsertAsync(System.Collections.Generic.IEnumerable{Chet.Template.Test})">

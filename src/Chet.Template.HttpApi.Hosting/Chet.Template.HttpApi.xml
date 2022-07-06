@@ -4,12 +4,10 @@
         <name>Chet.Template.HttpApi</name>
     </assembly>
     <members>
-        <member name="M:Chet.Template.Controllers.HelloWorldController.Exception">
+        <member name="T:Chet.Template.Controllers.TestController">
             <summary>
-            这是一个异常
+            Test控制器
             </summary>
-            <returns></returns>
-            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:Chet.Template.Controllers.TestController.InsertTestAsync(Chet.Template.TestDto)">
             <summary>

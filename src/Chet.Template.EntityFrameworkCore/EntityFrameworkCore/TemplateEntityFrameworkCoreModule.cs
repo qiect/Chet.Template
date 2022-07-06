@@ -37,7 +37,7 @@ public class TemplateEntityFrameworkCoreModule : AbpModule
                     options.UseSqlServer();
                     break;
                 case "PostgreSql":
-                    options.UsePostgreSql();
+                    options.UseNpgsql();
                     break;
                 case "Sqlite":
                     options.UseSqlite();

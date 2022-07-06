@@ -18,17 +18,13 @@ namespace Chet.Template.Swagger.Filters
     {
         public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
         {
+            //接口描述
             var tags = new List<OpenApiTag>
             {
                 new OpenApiTag {
                     Name = "Test",
                     Description = "Test相关接口",
                     ExternalDocs = new OpenApiExternalDocs { Description = "包含：增删改查" }
-                },
-                new OpenApiTag {
-                    Name = "HelloWorld",
-                    Description = "通用公共接口",
-                    ExternalDocs = new OpenApiExternalDocs { Description = "这里是一些通用的公共接口" }
                 }
             };
 

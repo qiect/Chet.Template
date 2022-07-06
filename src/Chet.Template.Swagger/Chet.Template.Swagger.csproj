@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Chet.Template.Domain\Chet.Template.Domain.csproj" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.2" />
     <PackageReference Include="Volo.Abp.AspNetCore" Version="5.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
   </ItemGroup>
