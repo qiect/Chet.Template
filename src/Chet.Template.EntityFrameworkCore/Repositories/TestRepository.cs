@@ -1,16 +1,14 @@
-﻿using Chet.Template.EntityFrameworkCore;
+﻿using FreeSql;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore;
 
 namespace Chet.Template.Repositories
 {
     /// <summary>
     /// Test仓储
     /// </summary>
-    public class TestRepository : EfCoreRepository<TemplateDbContext, Test, Guid>, ITestRepository
+    public class TestRepository : BaseRepository<Test, Guid>
     {
         public TestRepository(IDbContextProvider<TemplateDbContext> dbContextProvider) : base(dbContextProvider)
         {

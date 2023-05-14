@@ -1,12 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Volo.Abp.EntityFrameworkCore;
-
-namespace Chet.Template.EntityFrameworkCore.DbMigrations
+﻿namespace Chet.Template.EntityFrameworkCore.DbMigrations
 {
     public class TemplateDbMigrationsDbContext : AbpDbContext<TemplateDbMigrationsDbContext>
     {

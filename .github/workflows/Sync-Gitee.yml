@@ -2,7 +2,7 @@ name: SyncToGitee
 
 on:
   push:
-    branches: [simple]
+    branches: [simple_freesql]
   workflow_dispatch:
 
 jobs:

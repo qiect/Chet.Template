@@ -1,9 +1,6 @@
-﻿using System;
-using Volo.Abp.Domain.Entities;
-
-namespace Chet.Template
+﻿namespace Chet.Template
 {
-    public class Test : Entity<Guid>
+    public class Test
     {
         /// <summary>
         /// 名称
